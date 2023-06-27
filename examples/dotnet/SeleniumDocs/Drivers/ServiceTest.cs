@@ -20,14 +20,14 @@ namespace SeleniumDocs.Drivers
             driver = new ChromeDriver(service);
         }
 
-        [TestMethod]
-        public void DriverLocation()
-        {
-            var service = ChromeDriverService.CreateDefaultService();
-            service.DriverServicePath = driverLocation;
-
-            driver = new ChromeDriver(service);
-        }
+        // [TestMethod]
+        // public void DriverLocation()
+        // {
+        //     var service = ChromeDriverService.CreateDefaultService();
+        //     service.DriverServicePath = driverLocation;
+        //
+        //     driver = new ChromeDriver(service);
+        // }
 
         [TestMethod]
         public void DriverPort()

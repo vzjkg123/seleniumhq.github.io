@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 import tempfile
 from datetime import datetime
 
@@ -18,9 +19,8 @@ def driver():
 
 @pytest.fixture(scope='function')
 def chromedriver_path():
-    service = webdriver.chrome.service.Service()
-    options = webdriver.ChromeOptions()
-    return webdriver.common.driver_finder.DriverFinder().get_path(service=service, options=options)
+    driver = "chromedriver.exe" if sys.platform == "win32" else "chromedriver"
+    return os.getenv("CHROMEWEBDRIVER") + driver
 
 
 @pytest.fixture(scope='function')

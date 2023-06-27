@@ -7,18 +7,18 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.service.DriverFinder;
+//import org.openqa.selenium.remote.service.DriverFinder;
 
 import java.io.File;
 
 public class ServiceTest extends BaseTest {
     private static File driverLocation;
 
-    @BeforeAll
-    public static void installDriver() {
-        String location = DriverFinder.getPath(ChromeDriverService.createDefaultService(), new ChromeOptions());
-        driverLocation = new File(location);
-    }
+//    @BeforeAll
+//    public static void installDriver() {
+//        String location = DriverFinder.getPath(ChromeDriverService.createDefaultService(), new ChromeOptions());
+//        driverLocation = new File(location);
+//    }
 
     @AfterEach
     public void quit() {
