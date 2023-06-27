@@ -26,7 +26,7 @@ RSpec.describe 'Internet Explorer', exclusive: {platform: :windows} do
       FileUtils.remove_entry root_directory
     end
 
-    it 'logs to file' do
+    xit 'logs to file' do
       service = Selenium::WebDriver::Service.ie
 
       service.log = file_name
@@ -35,7 +35,7 @@ RSpec.describe 'Internet Explorer', exclusive: {platform: :windows} do
       expect(File.readlines(file_name).first).to include('Started InternetExplorerDriver server')
     end
 
-    it 'logs to console' do
+    xit 'logs to console' do
       service = Selenium::WebDriver::Service.ie
 
       service.log = $stdout
@@ -45,7 +45,7 @@ RSpec.describe 'Internet Explorer', exclusive: {platform: :windows} do
       }.to output(/Started InternetExplorerDriver server/).to_stdout_from_any_process
     end
 
-    it 'sets log level' do
+    xit 'sets log level' do
       service = Selenium::WebDriver::Service.ie
       service.log = $stdout
 

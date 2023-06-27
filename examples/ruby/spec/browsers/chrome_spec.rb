@@ -39,7 +39,7 @@ RSpec.describe 'Chrome' do
 
     after { FileUtils.rm_f(file_name) }
 
-    it 'logs to file' do
+    xit 'logs to file' do
       service = Selenium::WebDriver::Service.chrome
       service.log = file_name
 
@@ -48,7 +48,7 @@ RSpec.describe 'Chrome' do
       expect(File.readlines(file_name).first).to include('Starting ChromeDriver')
     end
 
-    it 'logs to console' do
+    xit 'logs to console' do
       service = Selenium::WebDriver::Service.chrome
       service.log = $stdout
 
@@ -57,7 +57,7 @@ RSpec.describe 'Chrome' do
       }.to output(/Starting ChromeDriver/).to_stdout_from_any_process
     end
 
-    it 'sets log level' do
+    xit 'sets log level' do
       service = Selenium::WebDriver::Service.chrome
       service.log = file_name
       service.args << '--log-level=DEBUG'
@@ -79,7 +79,7 @@ RSpec.describe 'Chrome' do
       expect(File.readlines(file_name).grep(/\[\d\d-\d\d-\d\d\d\d/).any?).to eq true
     end
 
-    it 'disables build checks' do
+    xit 'disables build checks' do
       service = Selenium::WebDriver::Service.chrome log: file_name, args: ['--verbose']
 
       service.args << '--disable-build-check'

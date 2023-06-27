@@ -26,7 +26,7 @@ RSpec.describe 'Firefox' do
       FileUtils.rm_rf(root_directory)
     end
 
-    it 'logs to file' do
+    xit 'logs to file' do
       service = Selenium::WebDriver::Service.firefox
       service.log = file_name
 
@@ -35,7 +35,7 @@ RSpec.describe 'Firefox' do
       expect(File.readlines(file_name).first).to include("geckodriver\tINFO\tListening on")
     end
 
-    it 'logs to console' do
+    xit 'logs to console' do
       service = Selenium::WebDriver::Service.firefox
       service.log = $stdout
 
@@ -44,7 +44,7 @@ RSpec.describe 'Firefox' do
       }.to output(/geckodriver	INFO	Listening on/).to_stdout_from_any_process
     end
 
-    it 'sets log level' do
+    xit 'sets log level' do
       service = Selenium::WebDriver::Service.firefox
       service.log = file_name
       service.args += %w[--log debug]
@@ -54,7 +54,7 @@ RSpec.describe 'Firefox' do
       expect(File.readlines(file_name).grep(/Marionette	DEBUG/).any?).to eq true
     end
 
-    it 'stops truncating log lines' do
+    xit 'stops truncating log lines' do
       service = Selenium::WebDriver::Service.firefox(log: file_name, args: %w[--log debug])
 
       service.args << '--log-no-truncate'

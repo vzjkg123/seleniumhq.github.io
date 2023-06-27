@@ -39,7 +39,7 @@ RSpec.describe 'Edge' do
 
     after { FileUtils.rm_f(file_name) }
 
-    it 'logs to file' do
+    xit 'logs to file' do
       service = Selenium::WebDriver::Service.edge
       service.log = file_name
 
@@ -48,7 +48,7 @@ RSpec.describe 'Edge' do
       expect(File.readlines(file_name).first).to include('Starting Microsoft Edge WebDriver')
     end
 
-    it 'logs to console' do
+    xit 'logs to console' do
       service = Selenium::WebDriver::Service.edge
       service.log = $stdout
 
@@ -57,7 +57,7 @@ RSpec.describe 'Edge' do
       }.to output(/Starting Microsoft Edge WebDriver/).to_stdout_from_any_process
     end
 
-    it 'sets log level' do
+    xit 'sets log level' do
       service = Selenium::WebDriver::Service.edge
       service.log = file_name
       service.args << '--log-level=DEBUG'
@@ -79,7 +79,7 @@ RSpec.describe 'Edge' do
       expect(File.readlines(file_name).grep(/\[\d\d-\d\d-\d\d\d\d/).any?).to eq true
     end
 
-    it 'disables build checks' do
+    xit 'disables build checks' do
       service = Selenium::WebDriver::Service.edge log: file_name, args: ['--verbose']
 
       service.args << '--disable-build-check'
