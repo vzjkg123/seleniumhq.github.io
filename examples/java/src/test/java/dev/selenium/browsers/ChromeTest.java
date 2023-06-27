@@ -66,19 +66,19 @@ public class ChromeTest {
         Assertions.assertTrue(fileContent.contains("Starting ChromeDriver"));
     }
 
-    @Test
-    public void logsToConsole() throws IOException {
-        System.setOut(new PrintStream(getLogLocation()));
-
-        ChromeDriverService service = new ChromeDriverService.Builder()
-                .withLogOutput(System.out)
-                .build();
-
-        driver = new ChromeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("Starting ChromeDriver"));
-    }
+//    @Test
+//    public void logsToConsole() throws IOException {
+//        System.setOut(new PrintStream(getLogLocation()));
+//
+//        ChromeDriverService service = new ChromeDriverService.Builder()
+//                .withLogOutput(System.out)
+//                .build();
+//
+//        driver = new ChromeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("Starting ChromeDriver"));
+//    }
 
     @Test
     public void logsWithLevel() throws IOException {

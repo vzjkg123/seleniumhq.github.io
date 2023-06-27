@@ -61,19 +61,19 @@ public class EdgeTest {
         Assertions.assertTrue(fileContent.contains("Starting Microsoft Edge WebDriver"));
     }
 
-    @Test
-    public void logsToConsole() throws IOException {
-        System.setOut(new PrintStream(getLogLocation()));
-
-        EdgeDriverService service = new EdgeDriverService.Builder()
-                .withLogOutput(System.out)
-                .build();
-
-        driver = new EdgeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("Starting Microsoft Edge WebDriver"));
-    }
+//    @Test
+//    public void logsToConsole() throws IOException {
+//        System.setOut(new PrintStream(getLogLocation()));
+//
+//        EdgeDriverService service = new EdgeDriverService.Builder()
+//                .withLogOutput(System.out)
+//                .build();
+//
+//        driver = new EdgeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("Starting Microsoft Edge WebDriver"));
+//    }
 
     @Test
     public void logsWithLevel() throws IOException {

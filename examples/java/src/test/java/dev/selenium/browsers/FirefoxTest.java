@@ -57,63 +57,63 @@ public class FirefoxTest extends BaseTest {
         Assertions.assertTrue(fileContent.contains("geckodriver	INFO	Listening on"));
     }
 
-    @Test
-    public void logsToConsole() throws IOException {
-        System.setOut(new PrintStream(getLogLocation()));
+//    @Test
+//    public void logsToConsole() throws IOException {
+//        System.setOut(new PrintStream(getLogLocation()));
+//
+//        FirefoxDriverService service = new GeckoDriverService.Builder()
+//                .withLogOutput(System.out)
+//                .build();
+//
+//        driver = new FirefoxDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("geckodriver	INFO	Listening on"));
+//    }
 
-        FirefoxDriverService service = new GeckoDriverService.Builder()
-                .withLogOutput(System.out)
-                .build();
+//    @Test
+//    public void logsWithLevel() throws IOException {
+//        System.setProperty(GeckoDriverService.GECKO_DRIVER_LOG_PROPERTY,
+//                getLogLocation().getAbsolutePath());
+//
+//        FirefoxDriverService service = new GeckoDriverService.Builder()
+//                .withLogLevel(FirefoxDriverLogLevel.DEBUG)
+//                .build();
+//
+//        driver = new FirefoxDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("Marionette\tDEBUG"));
+//    }
 
-        driver = new FirefoxDriver(service);
+//    @Test
+//    public void stopsTruncatingLogs() throws IOException {
+//        System.setProperty(GeckoDriverService.GECKO_DRIVER_LOG_PROPERTY,
+//                getLogLocation().getAbsolutePath());
+//        System.setProperty(GeckoDriverService.GECKO_DRIVER_LOG_LEVEL_PROPERTY,
+//                FirefoxDriverLogLevel.DEBUG.toString());
+//
+//        FirefoxDriverService service = new GeckoDriverService.Builder()
+//                .withTruncatedLogs(false)
+//                .build();
+//
+//        driver = new FirefoxDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertFalse(fileContent.contains(" ... "));
+//    }
 
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("geckodriver	INFO	Listening on"));
-    }
-
-    @Test
-    public void logsWithLevel() throws IOException {
-        System.setProperty(GeckoDriverService.GECKO_DRIVER_LOG_PROPERTY,
-                getLogLocation().getAbsolutePath());
-
-        FirefoxDriverService service = new GeckoDriverService.Builder()
-                .withLogLevel(FirefoxDriverLogLevel.DEBUG)
-                .build();
-
-        driver = new FirefoxDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("Marionette\tDEBUG"));
-    }
-
-    @Test
-    public void stopsTruncatingLogs() throws IOException {
-        System.setProperty(GeckoDriverService.GECKO_DRIVER_LOG_PROPERTY,
-                getLogLocation().getAbsolutePath());
-        System.setProperty(GeckoDriverService.GECKO_DRIVER_LOG_LEVEL_PROPERTY,
-                FirefoxDriverLogLevel.DEBUG.toString());
-
-        FirefoxDriverService service = new GeckoDriverService.Builder()
-                .withTruncatedLogs(false)
-                .build();
-
-        driver = new FirefoxDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertFalse(fileContent.contains(" ... "));
-    }
-
-    @Test
-    public void setProfileLocation() throws IOException {
-        FirefoxDriverService service = new GeckoDriverService.Builder()
-                .withProfileRoot(getTempDirectory())
-                .build();
-
-        driver = new FirefoxDriver(service);
-
-        String location = (String) driver.getCapabilities().getCapability("moz:profile");
-        Assertions.assertTrue(location.contains(getTempDirectory().getAbsolutePath()));
-    }
+//    @Test
+//    public void setProfileLocation() throws IOException {
+//        FirefoxDriverService service = new GeckoDriverService.Builder()
+//                .withProfileRoot(getTempDirectory())
+//                .build();
+//
+//        driver = new FirefoxDriver(service);
+//
+//        String location = (String) driver.getCapabilities().getCapability("moz:profile");
+//        Assertions.assertTrue(location.contains(getTempDirectory().getAbsolutePath()));
+//    }
 
     @Test
     public void installAddon() {

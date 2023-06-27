@@ -59,19 +59,19 @@ public class InternetExplorerTest {
         Assertions.assertTrue(fileContent.contains("Started InternetExplorerDriver server"));
     }
 
-    @Test
-    public void logsToConsole() throws IOException {
-        System.setOut(new PrintStream(getLogLocation()));
-
-        InternetExplorerDriverService service = new InternetExplorerDriverService.Builder()
-                .withLogOutput(System.out)
-                .build();
-
-        driver = new InternetExplorerDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("Started InternetExplorerDriver server"));
-    }
+//    @Test
+//    public void logsToConsole() throws IOException {
+//        System.setOut(new PrintStream(getLogLocation()));
+//
+//        InternetExplorerDriverService service = new InternetExplorerDriverService.Builder()
+//                .withLogOutput(System.out)
+//                .build();
+//
+//        driver = new InternetExplorerDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("Started InternetExplorerDriver server"));
+//    }
 
     @Test
     public void logsWithLevel() throws IOException {

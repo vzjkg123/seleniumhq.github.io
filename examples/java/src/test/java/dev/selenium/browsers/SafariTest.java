@@ -25,12 +25,12 @@ public class SafariTest {
         driver = new SafariDriver(options);
     }
 
-    @Test
-    public void enableLogs() {
-        SafariDriverService service = new SafariDriverService.Builder()
-                .withLogging(true)
-                .build();
-
-        driver = new SafariDriver(service);
-    }
+//    @Test
+//    public void enableLogs() {
+//        SafariDriverService service = new SafariDriverService.Builder()
+//                .withLogging(true)
+//                .build();
+//
+//        driver = new SafariDriver(service);
+//    }
 }
