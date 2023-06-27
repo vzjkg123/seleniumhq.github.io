@@ -13,7 +13,7 @@ RSpec.describe 'Safari', exclusive: {platform: :macosx} do
   describe 'Service' do
     let(:directory) { "#{Dir.home}/Library/Logs/com.apple.WebDriver/*" }
 
-    xit 'enable logs' do
+    it 'enable logs' do
       original_count = Dir[directory].length
       service = Selenium::WebDriver::Service.safari
 
@@ -23,7 +23,7 @@ RSpec.describe 'Safari', exclusive: {platform: :macosx} do
       expect(Dir[directory].length - original_count).to eq 1
     end
 
-    it 'does not set log output' do
+    xit 'does not set log output' do
       service = Selenium::WebDriver::Service.safari
 
       expect {
