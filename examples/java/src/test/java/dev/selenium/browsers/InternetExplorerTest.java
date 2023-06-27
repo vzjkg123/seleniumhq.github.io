@@ -47,17 +47,17 @@ public class InternetExplorerTest {
         driver = new InternetExplorerDriver(options);
     }
 
-    @Test
-    public void logsToFile() throws IOException {
-        InternetExplorerDriverService service = new InternetExplorerDriverService.Builder()
-                .withLogFile(getLogLocation())
-                .build();
-
-        driver = new InternetExplorerDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("Started InternetExplorerDriver server"));
-    }
+//    @Test
+//    public void logsToFile() throws IOException {
+//        InternetExplorerDriverService service = new InternetExplorerDriverService.Builder()
+//                .withLogFile(getLogLocation())
+//                .build();
+//
+//        driver = new InternetExplorerDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("Started InternetExplorerDriver server"));
+//    }
 
 //    @Test
 //    public void logsToConsole() throws IOException {

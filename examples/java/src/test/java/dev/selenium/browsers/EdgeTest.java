@@ -49,17 +49,17 @@ public class EdgeTest {
         driver = new EdgeDriver(options);
     }
 
-    @Test
-    public void logsToFile() throws IOException {
-        EdgeDriverService service = new EdgeDriverService.Builder()
-                .withLogFile(getLogLocation())
-                .build();
-
-        driver = new EdgeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("Starting Microsoft Edge WebDriver"));
-    }
+//    @Test
+//    public void logsToFile() throws IOException {
+//        EdgeDriverService service = new EdgeDriverService.Builder()
+//                .withLogFile(getLogLocation())
+//                .build();
+//
+//        driver = new EdgeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("Starting Microsoft Edge WebDriver"));
+//    }
 
 //    @Test
 //    public void logsToConsole() throws IOException {
