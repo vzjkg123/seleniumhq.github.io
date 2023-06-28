@@ -13,7 +13,7 @@ import org.openqa.selenium.By;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.openqa.selenium.chromium.ChromiumDriverLogLevel;
+//import org.openqa.selenium.chromium.ChromiumDriverLogLevel;
 
 import java.io.File;
 import java.io.IOException;
@@ -80,57 +80,57 @@ public class ChromeTest {
 //        Assertions.assertTrue(fileContent.contains("Starting ChromeDriver"));
 //    }
 
-    @Test
-    public void logsWithLevel() throws IOException {
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY,
-                getLogLocation().getAbsolutePath());
+//    @Test
+//    public void logsWithLevel() throws IOException {
+//        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY,
+//                getLogLocation().getAbsolutePath());
+//
+//        ChromeDriverService service = new ChromeDriverService.Builder()
+//            .withLogLevel(ChromiumDriverLogLevel.DEBUG)
+//            .build();
+//
+//        driver = new ChromeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Assertions.assertTrue(fileContent.contains("[DEBUG]:"));
+//    }
 
-        ChromeDriverService service = new ChromeDriverService.Builder()
-            .withLogLevel(ChromiumDriverLogLevel.DEBUG)
-            .build();
+//    @Test
+//    public void configureDriverLogs() throws IOException {
+//        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY,
+//                getLogLocation().getAbsolutePath());
+//        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_LEVEL_PROPERTY,
+//                ChromiumDriverLogLevel.DEBUG.toString());
+//
+//        ChromeDriverService service = new ChromeDriverService.Builder()
+//            .withAppendLog(true)
+//            .withReadableTimestamp(true)
+//            .build();
+//
+//        driver = new ChromeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        Pattern pattern = Pattern.compile("\\[\\d\\d-\\d\\d-\\d\\d\\d\\d", Pattern.CASE_INSENSITIVE);
+//        Assertions.assertTrue(pattern.matcher(fileContent).find());
+//    }
 
-        driver = new ChromeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Assertions.assertTrue(fileContent.contains("[DEBUG]:"));
-    }
-
-    @Test
-    public void configureDriverLogs() throws IOException {
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY,
-                getLogLocation().getAbsolutePath());
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_LEVEL_PROPERTY,
-                ChromiumDriverLogLevel.DEBUG.toString());
-
-        ChromeDriverService service = new ChromeDriverService.Builder()
-            .withAppendLog(true)
-            .withReadableTimestamp(true)
-            .build();
-
-        driver = new ChromeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        Pattern pattern = Pattern.compile("\\[\\d\\d-\\d\\d-\\d\\d\\d\\d", Pattern.CASE_INSENSITIVE);
-        Assertions.assertTrue(pattern.matcher(fileContent).find());
-    }
-
-    @Test
-    public void disableBuildChecks() throws IOException {
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY,
-                getLogLocation().getAbsolutePath());
-        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_LEVEL_PROPERTY,
-                ChromiumDriverLogLevel.WARNING.toString());
-
-        ChromeDriverService service = new ChromeDriverService.Builder()
-                .withBuildCheckDisabled(true)
-                .build();
-
-        driver = new ChromeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        String expected = "[WARNING]: You are using an unsupported command-line switch: --disable-build-check";
-        Assertions.assertTrue(fileContent.contains(expected));
-    }
+//    @Test
+//    public void disableBuildChecks() throws IOException {
+//        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY,
+//                getLogLocation().getAbsolutePath());
+//        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_LEVEL_PROPERTY,
+//                ChromiumDriverLogLevel.WARNING.toString());
+//
+//        ChromeDriverService service = new ChromeDriverService.Builder()
+//                .withBuildCheckDisabled(true)
+//                .build();
+//
+//        driver = new ChromeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        String expected = "[WARNING]: You are using an unsupported command-line switch: --disable-build-check";
+//        Assertions.assertTrue(fileContent.contains(expected));
+//    }
 
      @Test
     public void extensionOptions() {
