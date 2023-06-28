@@ -56,12 +56,12 @@ RSpec.describe 'Internet Explorer', exclusive: {platform: :windows} do
       }.to output(/Invalid capability setting: timeouts is type null/).to_stdout_from_any_process
     end
 
-    it 'sets location for supporting files' do
+#     it 'sets location for supporting files' do
 #       service = Selenium::WebDriver::Service.ie
 #
 #       service.args << "–extract-path=#{root_directory}"
 #
 #       @driver = Selenium::WebDriver.for :ie, service: service
 #     end
-  end
+#   end
 end
