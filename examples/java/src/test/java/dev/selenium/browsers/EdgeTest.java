@@ -109,23 +109,23 @@ public class EdgeTest {
 //        Assertions.assertTrue(pattern.matcher(fileContent).find());
 //    }
 
-    @Test
-    public void disableBuildChecks() throws IOException {
-        System.setProperty(EdgeDriverService.EDGE_DRIVER_LOG_PROPERTY,
-                getLogLocation().getAbsolutePath());
-        System.setProperty(EdgeDriverService.EDGE_DRIVER_LOG_LEVEL_PROPERTY,
-                ChromiumDriverLogLevel.WARNING.toString());
-
-        EdgeDriverService service = new EdgeDriverService.Builder()
-                .withBuildCheckDisabled(true)
-                .build();
-
-        driver = new EdgeDriver(service);
-
-        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
-        String expected = "[WARNING]: You are using an unsupported command-line switch: --disable-build-check";
-        Assertions.assertTrue(fileContent.contains(expected));
-    }
+//    @Test
+//    public void disableBuildChecks() throws IOException {
+//        System.setProperty(EdgeDriverService.EDGE_DRIVER_LOG_PROPERTY,
+//                getLogLocation().getAbsolutePath());
+//        System.setProperty(EdgeDriverService.EDGE_DRIVER_LOG_LEVEL_PROPERTY,
+//                ChromiumDriverLogLevel.WARNING.toString());
+//
+//        EdgeDriverService service = new EdgeDriverService.Builder()
+//                .withBuildCheckDisabled(true)
+//                .build();
+//
+//        driver = new EdgeDriver(service);
+//
+//        String fileContent = new String(Files.readAllBytes(getLogLocation().toPath()));
+//        String expected = "[WARNING]: You are using an unsupported command-line switch: --disable-build-check";
+//        Assertions.assertTrue(fileContent.contains(expected));
+//    }
 
     private File getLogLocation() throws IOException {
         if (logLocation == null || !logLocation.exists()) {

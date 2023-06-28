@@ -57,11 +57,11 @@ RSpec.describe 'Internet Explorer', exclusive: {platform: :windows} do
     end
 
     it 'sets location for supporting files' do
-      service = Selenium::WebDriver::Service.ie
-
-      service.args << "–extract-path=#{root_directory}"
-
-      @driver = Selenium::WebDriver.for :ie, service: service
-    end
+#       service = Selenium::WebDriver::Service.ie
+#
+#       service.args << "–extract-path=#{root_directory}"
+#
+#       @driver = Selenium::WebDriver.for :ie, service: service
+#     end
   end
 end

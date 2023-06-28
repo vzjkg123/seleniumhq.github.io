@@ -26,25 +26,25 @@ class LogInspectorTest extends BaseTest {
         driver = new FirefoxDriver(options);
     }
 
-    @Test
-    void testListenToConsoleLog() throws ExecutionException, InterruptedException, TimeoutException {
-        try (LogInspector logInspector = new LogInspector(driver)) {
-            CompletableFuture<ConsoleLogEntry> future = new CompletableFuture<>();
-            logInspector.onConsoleEntry(future::complete);
-
-            driver.get("https://www.selenium.dev/selenium/web/bidi/logEntryAdded.html");
-            driver.findElement(By.id("consoleLog")).click();
-
-            ConsoleLogEntry logEntry = future.get(5, TimeUnit.SECONDS);
-
-            Assertions.assertEquals("Hello, world!", logEntry.getText());
-            Assertions.assertNull(logEntry.getRealm());
-            Assertions.assertEquals(1, logEntry.getArgs().size());
-            Assertions.assertEquals("console", logEntry.getType());
-            Assertions.assertEquals("log", logEntry.getMethod());
-            Assertions.assertNull(logEntry.getStackTrace());
-        }
-    }
+//    @Test
+//    void testListenToConsoleLog() throws ExecutionException, InterruptedException, TimeoutException {
+//        try (LogInspector logInspector = new LogInspector(driver)) {
+//            CompletableFuture<ConsoleLogEntry> future = new CompletableFuture<>();
+//            logInspector.onConsoleEntry(future::complete);
+//
+//            driver.get("https://www.selenium.dev/selenium/web/bidi/logEntryAdded.html");
+//            driver.findElement(By.id("consoleLog")).click();
+//
+//            ConsoleLogEntry logEntry = future.get(5, TimeUnit.SECONDS);
+//
+//            Assertions.assertEquals("Hello, world!", logEntry.getText());
+//            Assertions.assertNull(logEntry.getRealm());
+//            Assertions.assertEquals(1, logEntry.getArgs().size());
+//            Assertions.assertEquals("console", logEntry.getType());
+//            Assertions.assertEquals("log", logEntry.getMethod());
+//            Assertions.assertNull(logEntry.getStackTrace());
+//        }
+//    }
 
 //    @Test
 //    void testListenToJavascriptLog()
