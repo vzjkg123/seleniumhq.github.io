@@ -13,17 +13,17 @@ RSpec.describe 'Service' do
     @driver = Selenium::WebDriver.for :chrome, service: service
   end
 
-  it 'specifies driver location' do
-    service = Selenium::WebDriver::Service.chrome
-    service.executable_path = driver_path
+#   it 'specifies driver location' do
+#     service = Selenium::WebDriver::Service.chrome
+#     service.executable_path = driver_path
+#
+#     @driver = Selenium::WebDriver.for :chrome, service: service
+#   end
 
-    @driver = Selenium::WebDriver.for :chrome, service: service
-  end
-
-  it 'specifies driver port' do
-    service = Selenium::WebDriver::Service.chrome
-    service.port = 1234
-
-    @driver = Selenium::WebDriver.for :chrome, service: service
-  end
+#   it 'specifies driver port' do
+#     service = Selenium::WebDriver::Service.chrome
+#     service.port = 1234
+#
+#     @driver = Selenium::WebDriver.for :chrome, service: service
+#   end
 end

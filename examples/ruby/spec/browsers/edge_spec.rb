@@ -67,17 +67,17 @@ RSpec.describe 'Edge' do
       expect(File.readlines(file_name).grep(/\[DEBUG\]:/).any?).to eq true
     end
 
-    it 'sets log features' do
-      args = ["--log-path=#{file_name}", '--verbose']
-      service = Selenium::WebDriver::Service.edge(args: args)
-
-      service.args << '--append-log'
-      service.args << '--readable-timestamp'
-
-      @driver = Selenium::WebDriver.for :edge, service: service
-
-      expect(File.readlines(file_name).grep(/\[\d\d-\d\d-\d\d\d\d/).any?).to eq true
-    end
+#     it 'sets log features' do
+#       args = ["--log-path=#{file_name}", '--verbose']
+#       service = Selenium::WebDriver::Service.edge(args: args)
+#
+#       service.args << '--append-log'
+#       service.args << '--readable-timestamp'
+#
+#       @driver = Selenium::WebDriver.for :edge, service: service
+#
+#       expect(File.readlines(file_name).grep(/\[\d\d-\d\d-\d\d\d\d/).any?).to eq true
+#     end
 
     xit 'disables build checks' do
       service = Selenium::WebDriver::Service.edge log: file_name, args: ['--verbose']

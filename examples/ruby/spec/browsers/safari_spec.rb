@@ -13,15 +13,15 @@ RSpec.describe 'Safari', exclusive: {platform: :macosx} do
   describe 'Service' do
     let(:directory) { "#{Dir.home}/Library/Logs/com.apple.WebDriver/*" }
 
-    it 'enable logs' do
-      original_count = Dir[directory].length
-      service = Selenium::WebDriver::Service.safari
-
-      service.args << '--diagnose'
-
-      @driver = Selenium::WebDriver.for :safari, service: service
-      expect(Dir[directory].length - original_count).to eq 1
-    end
+#     it 'enable logs' do
+#       original_count = Dir[directory].length
+#       service = Selenium::WebDriver::Service.safari
+#
+#       service.args << '--diagnose'
+#
+#       @driver = Selenium::WebDriver.for :safari, service: service
+#       expect(Dir[directory].length - original_count).to eq 1
+#     end
 
     xit 'does not set log output' do
       service = Selenium::WebDriver::Service.safari

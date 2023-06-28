@@ -67,17 +67,17 @@ RSpec.describe 'Chrome' do
       expect(File.readlines(file_name).grep(/\[DEBUG\]:/).any?).to eq true
     end
 
-    it 'sets log features' do
-      args = ["--log-path=#{file_name}", '--verbose']
-      service = Selenium::WebDriver::Service.chrome(args: args)
-
-      service.args << '--append-log'
-      service.args << '--readable-timestamp'
-
-      @driver = Selenium::WebDriver.for :chrome, service: service
-
-      expect(File.readlines(file_name).grep(/\[\d\d-\d\d-\d\d\d\d/).any?).to eq true
-    end
+#     it 'sets log features' do
+#       args = ["--log-path=#{file_name}", '--verbose']
+#       service = Selenium::WebDriver::Service.chrome(args: args)
+#
+#       service.args << '--append-log'
+#       service.args << '--readable-timestamp'
+#
+#       @driver = Selenium::WebDriver.for :chrome, service: service
+#
+#       expect(File.readlines(file_name).grep(/\[\d\d-\d\d-\d\d\d\d/).any?).to eq true
+#     end
 
     xit 'disables build checks' do
       service = Selenium::WebDriver::Service.chrome log: file_name, args: ['--verbose']

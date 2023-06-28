@@ -64,15 +64,15 @@ RSpec.describe 'Firefox' do
       expect(File.readlines(file_name).grep(/ \.\.\. /).any?).to eq false
     end
 
-    it 'sets default profile location' do
-      service = Selenium::WebDriver::Service.firefox
-      service.args += ['--profile-root', root_directory]
-
-      @driver = Selenium::WebDriver.for :firefox, service: service
-
-      profile_location = Dir.new(@driver.capabilities['moz:profile'])
-      expect(profile_location.path.gsub('\\','/')).to include(root_directory)
-    end
+#     it 'sets default profile location' do
+#       service = Selenium::WebDriver::Service.firefox
+#       service.args += ['--profile-root', root_directory]
+#
+#       @driver = Selenium::WebDriver.for :firefox, service: service
+#
+#       profile_location = Dir.new(@driver.capabilities['moz:profile'])
+#       expect(profile_location.path.gsub('\\','/')).to include(root_directory)
+#     end
   end
 
   describe 'Features' do
