@@ -5,25 +5,12 @@ weight: 12
 
 ---
 
-{{% pageinfo color="warning" %}}
-<p class="lead">
-   <i class="fas fa-language d-4"></i>
-   Page being translated from
-   English to Chinese. Do you speak Chinese? Help us to translate
-   it by sending us pull requests!
-</p>
-{{% /pageinfo %}}
 
+下面的API列表将会随着Selenium的实际使用案例不断增加。如果你想看到其他功能，请提[feature request](https://github.com/SeleniumHQ/selenium/issues/new?assignees=&labels=&template=feature.md).
 
-The following list of APIs will be growing as the Selenium
-project works through supporting real world use cases. If there
-is additional functionality you'd like to see, please raise a
-[feature request](https://github.com/SeleniumHQ/selenium/issues/new?assignees=&labels=&template=feature.md).
+## 获取基础权限
 
-## Register Basic Auth
-
-Some applications make use of browser authentication to secure pages.
-With Selenium, you can automate the input of basic auth credentials whenever they arise.
+一些应用使用浏览器认证以保护网页安全。Selenium可以在需要凭证时帮你自动输入凭证
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" >}}
@@ -86,11 +73,9 @@ driver.get("https://your-domain.com/login")
 {{< /tab >}}
 {{< /tabpane >}}
 
-## Mutation Observation
+## 变化观测
 
-Mutation Observation is the ability to capture events via
-WebDriver BiDi when there are DOM mutations on a specific
-element in the DOM.
+变化观测是一种通过WebDriver BiDi捕获指定DOM元素变化的能力
 
 {{< tabpane langEqualsHeader=true >}}
   {{< tab header="Java" >}}
@@ -208,9 +193,9 @@ const assert = require("assert");
   {{< /tab >}}
 {{< /tabpane >}}
 
-## Listen to `console.log` events
+## 监听 `console.log` 事件
 
-Listen to the `console.log` events and register callbacks to process the event.
+监听`console.log`事件并为其注册回调函数以响应事件
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" >}}
@@ -316,10 +301,9 @@ fun kotlinConsoleLogExample() {
 {{< /tab >}}
 {{< /tabpane >}}
 
-## Listen to JS Exceptions
+## 监听JS异常（JS Exception）
 
-Listen to the JS Exceptions
-and register callbacks to process the exception details.
+监听JS异常并注册回调函数以进行异常处理
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" >}}
@@ -449,10 +433,10 @@ fun kotlinJsErrorListener() {
 {{< /tab >}}
 {{< /tabpane >}}
 
-## Network Interception
+## 网络拦截器
 
-If you want to capture network events coming into the browser and you want manipulate them you are able to do
-it with the following examples.
+如果你想捕获浏览器的网络请求以进行一些定制化的操作，可以查看以下示例
+
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" >}}
